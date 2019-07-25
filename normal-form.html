@@ -1,0 +1,67 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('pre.code').forEach(function(item) {
+          hljs.highlightBlock(item)
+        })
+      });
+    </script>
+    <title>normal-form</title>
+</head>
+<body>
+<style type="text/css">
+nav a {
+    text-align: left;
+}
+nav #name {
+    text-align: right;
+    float: right;
+    font-style: italic;
+}
+</style>
+    <nav>
+    <a href="index.html">Index</a>
+    <span id="name">Alex Balgavy</span>
+    </nav>
+    <hr>
+    <div class="content">
+    
+<div id="Normal form"><h2 id="Normal form" class="header"><a href="#Normal form">Normal form</a></h2></div>
+<p>
+λ-term is in beta-normal (B-normal) form if it does not contain a beta-redex.
+If it has a normal form, it can be reduced.
+</p>
+
+<p>
+If it is <em>in</em> normal form, it also <em>has</em> a normal form.
+</p>
+
+<p>
+A λ-term M is in normal form if:
+</p>
+<ul>
+<li>
+M = λx.M with M a normal form
+
+<li>
+M = x M1 ... Mn with n ≥ 0 and M1...Mn normal forms
+
+</ul>
+
+<p>
+<span id="Normal form-Strongly normalising (terminating):"></span><strong id="Strongly normalising (terminating):">Strongly normalising (terminating):</strong> if all B-reduction sequences starting in M are finite (therefore also weakly normalising)
+</p>
+
+<p>
+<span id="Normal form-Weakly normalising:"></span><strong id="Weakly normalising:">Weakly normalising:</strong> if there exists a B-reduction sequence starting in M that ends in a normal form
+</p>
+
+    </div>
+</body>
+</html>

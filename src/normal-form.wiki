@@ -1,0 +1,15 @@
+%template math
+== Normal form ==
+λ-term is in beta-normal (B-normal) form if it does not contain a beta-redex.
+If it has a normal form, it can be reduced.
+
+If it is _in_ normal form, it also _has_ a normal form.
+
+A λ-term M is in normal form if:
+* M = λx.M with M a normal form
+* M = x M1 ... Mn with n ≥ 0 and M1...Mn normal forms
+
+*Strongly normalising (terminating):* if all B-reduction sequences starting in M are finite (therefore also weakly normalising)
+
+*Weakly normalising:* if there exists a B-reduction sequence starting in M that ends in a normal form
+

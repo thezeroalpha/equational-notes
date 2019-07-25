@@ -1,0 +1,9 @@
+%template math
+== Functional programming ==
+A functional program is an expression.
+It's executed by evaluating the expression, from left to right.
+Focus on what, not on how.
+Functions are pure (mathematical).
+Input always gives same output.
+Leads to concise programs with a high level of abstraction.
+

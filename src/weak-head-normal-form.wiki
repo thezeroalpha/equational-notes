@@ -1,0 +1,12 @@
+%template math
+== Weak head normal form ==
+at least one symbol is stable under reduction (the top part)
+
+If the root is an abstraction, or applications with a variable on the left, it’s in WHNF.
+
+every normal form is a WHNF, not necessarily the other way around.
+
+examples: x, λx.x, xΩ, λx.Ω
+
+If you reduce using lazy strategy, you only want to get into WH normal form.
+

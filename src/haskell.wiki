@@ -1,0 +1,20 @@
+%template math
+== Haskell ==
+Application by juxtaposition (F M):
+
+{{{class="code haskell"
+head [1,2]
+}}}
+
+Partial application:
+
+{{{class="code haskell"
+sum = foldr (+) 0
+}}}
+
+Anonymous function (λx.x):
+
+{{{class="code haskell"
+\x -> x
+}}}
+

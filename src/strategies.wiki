@@ -1,0 +1,45 @@
+%template math
+== Strategies ==
+*strategy:* how to reduce a term
+
+*normalising strategy:* gives a reduction sequence to a normal form. leftmost outermost.
+
+e.g. given: (λy.z)(Ω)
+
+{{local:../img/strategies.png|Strategies|style="max-width:50vw;max-height:30vh"}}
+
+* Outermost: not contained in another redex
+* Innermost: does not contain another redex
+* Leftmost: the one most on the left obviously
+
+=== Strategies ===
+==== Call by need ====
+reduce in every step the leftmost outermost redex. if it finds a loop, no normal form.
+
+e.g. in above: (λy.z)(Ω) ➝ β z
+
+another e.g.: (λx.fxx)((λx.x) 3) ➝ β f ((λx.x) 3) ((λx.x) 3) ➝ β f 3 3
+
+pros:
+* normalising
+* all steps contribute to normal form
+
+cons:
+* redexes may be copied
+* difficult to implement
+
+==== Call by value ====
+Reduce in every step the leftmost innermost redex.
+
+e.g. in above: (λy.z)(Ω) ➝ β (λ.z)(Ω) ➝ β (λy.z)(Ω) ➝ β …
+
+e.g.: (λx.fxx) ((λx.x)3) ➝ β (λx.fxx) 3 ➝ β f 3 3
+
+pros:
+* redexes not copied
+* easy to implement
+
+cons:
+* not normalising
+* reduction to normal form may reduce redexes that don’t contribute to normal form
+

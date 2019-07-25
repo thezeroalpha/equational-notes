@@ -1,0 +1,11 @@
+%template math
+== Famous lambda calculus terms ==
+You probably need to memorize these.
+
+* I = 𝜆x.x
+* K = 𝜆x.𝜆y.x
+* S = 𝜆x.𝜆y.𝜆z.xz(yz)
+* Ω = (𝜆x.xx)(𝜆x.xx) — not strongly normalising
+
+All are closed (no free variables). All are abstractions.
+

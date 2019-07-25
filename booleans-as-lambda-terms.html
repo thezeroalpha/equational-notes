@@ -1,0 +1,116 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('pre.code').forEach(function(item) {
+          hljs.highlightBlock(item)
+        })
+      });
+    </script>
+    <title>booleans-as-lambda-terms</title>
+</head>
+<body>
+<style type="text/css">
+nav a {
+    text-align: left;
+}
+nav #name {
+    text-align: right;
+    float: right;
+    font-style: italic;
+}
+</style>
+    <nav>
+    <a href="index.html">Index</a>
+    <span id="name">Alex Balgavy</span>
+    </nav>
+    <hr>
+    <div class="content">
+    
+<div id="Booleans as lambda terms"><h2 id="Booleans as lambda terms" class="header"><a href="#Booleans as lambda terms">Booleans as lambda terms</a></h2></div>
+<p>
+Church's thesis: everything computable can be defined in pure untyped lambda calculus
+</p>
+
+<div id="Booleans as lambda terms-Finding booleans"><h3 id="Finding booleans" class="header"><a href="#Booleans as lambda terms-Finding booleans">Finding booleans</a></h3></div>
+<p>
+Try to find two different closed normal terms that let us calculate.
+</p>
+<ol>
+<li>
+Two normal terms: x, y
+
+<li>
+Closed: λx.x, λy.y
+
+<ul>
+<li>
+but these are alpha-equivalent!
+
+</ul>
+<li>
+Different: λx.y.x, λx.y.y
+
+</ol>
+
+<p>
+Therefore:
+</p>
+<ul>
+<li>
+true = λxy.x
+
+<li>
+false = λxy.y
+
+</ul>
+
+<div id="Booleans as lambda terms-Negation"><h3 id="Negation" class="header"><a href="#Booleans as lambda terms-Negation">Negation</a></h3></div>
+<ul>
+<li>
+not true =β false
+
+<li>
+not false =β true
+
+</ul>
+
+<p>
+Deriving the definition for 'not':
+</p>
+
+<pre>
+(not) (true)
+(λu.u__) (true) =&gt; replace the u with true.
+true takes two arguments and returns first (by definition above).
+therefore two arguments must be false, true.
+</pre>
+
+<p>
+∴ not = λx.x false true
+</p>
+
+<p>
+Verifying:
+</p>
+
+<pre>
+(not) (true)
+=&gt; (λu.u false true) (true)
+=&gt; (true) (false) (true)
+=&gt; (λxy.x) (false) (true)
+=&gt; false
+</pre>
+
+<p>
+not true == false, so definition is OK
+</p>
+
+    </div>
+</body>
+</html>

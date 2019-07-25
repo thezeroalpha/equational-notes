@@ -1,0 +1,62 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('pre.code').forEach(function(item) {
+          hljs.highlightBlock(item)
+        })
+      });
+    </script>
+    <title>haskell</title>
+</head>
+<body>
+<style type="text/css">
+nav a {
+    text-align: left;
+}
+nav #name {
+    text-align: right;
+    float: right;
+    font-style: italic;
+}
+</style>
+    <nav>
+    <a href="index.html">Index</a>
+    <span id="name">Alex Balgavy</span>
+    </nav>
+    <hr>
+    <div class="content">
+    
+<div id="Haskell"><h2 id="Haskell" class="header"><a href="#Haskell">Haskell</a></h2></div>
+<p>
+Application by juxtaposition (F M):
+</p>
+
+<pre class="code haskell">
+head [1,2]
+</pre>
+
+<p>
+Partial application:
+</p>
+
+<pre class="code haskell">
+sum = foldr (+) 0
+</pre>
+
+<p>
+Anonymous function (λx.x):
+</p>
+
+<pre class="code haskell">
+\x -&gt; x
+</pre>
+
+    </div>
+</body>
+</html>

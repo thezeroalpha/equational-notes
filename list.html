@@ -1,0 +1,85 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('pre.code').forEach(function(item) {
+          hljs.highlightBlock(item)
+        })
+      });
+    </script>
+    <title>list</title>
+</head>
+<body>
+<style type="text/css">
+nav a {
+    text-align: left;
+}
+nav #name {
+    text-align: right;
+    float: right;
+    font-style: italic;
+}
+</style>
+    <nav>
+    <a href="index.html">Index</a>
+    <span id="name">Alex Balgavy</span>
+    </nav>
+    <hr>
+    <div class="content">
+    
+<div id="List"><h2 id="List" class="header"><a href="#List">List</a></h2></div>
+<p>
+a list is made by repeatedly forming a pair:
+<code>[1,2,3]</code> is <code>(1, (2, (3, nil) ) )</code>
+</p>
+
+<div id="List-definition"><h3 id="definition" class="header"><a href="#List-definition">definition</a></h3></div>
+<ul>
+<li>
+constructor for empty list:
+
+<ul>
+<li>
+nil := λxy.y
+
+</ul>
+<li>
+constructor for cons:
+
+<ul>
+<li>
+cons := λht.λz.z h t
+
+</ul>
+</ul>
+
+<p>
+then:
+</p>
+<ul>
+<li>
+nil = λxy.y
+
+<li>
+cons H T =β λz.z H T
+
+</ul>
+
+<div id="List-head and tail"><h3 id="head and tail" class="header"><a href="#List-head and tail">head and tail</a></h3></div>
+<ul>
+<li>
+head := λl.l (λht.h)
+
+<li>
+tail := λl.l (λht.t)
+
+</ul>
+
+    </div>
+</body>
+</html>

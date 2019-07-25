@@ -1,0 +1,63 @@
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script type="text/javascript" async src="https://cdn.jsdelivr.net/gh/mathjax/MathJax@2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <link rel="Stylesheet" type="text/css" href="style.css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('pre.code').forEach(function(item) {
+          hljs.highlightBlock(item)
+        })
+      });
+    </script>
+    <title>natural-numbers-as-lambda-terms</title>
+</head>
+<body>
+<style type="text/css">
+nav a {
+    text-align: left;
+}
+nav #name {
+    text-align: right;
+    float: right;
+    font-style: italic;
+}
+</style>
+    <nav>
+    <a href="index.html">Index</a>
+    <span id="name">Alex Balgavy</span>
+    </nav>
+    <hr>
+    <div class="content">
+    
+<div id="Natural numbers as lambda terms"><h2 id="Natural numbers as lambda terms" class="header"><a href="#Natural numbers as lambda terms">Natural numbers as lambda terms</a></h2></div>
+<div id="Natural numbers as lambda terms-Church numerals:"><h3 id="Church numerals:" class="header"><a href="#Natural numbers as lambda terms-Church numerals:">Church numerals:</a></h3></div>
+<pre>
+c0 = λs.λz.z
+c1 = λs.λz.s(z)
+c2 = λs.λz.s(s((z)))
+...
+cn = λs.λz.sn(z)
+</pre>
+
+<div id="Natural numbers as lambda terms-Definability"><h3 id="Definability" class="header"><a href="#Natural numbers as lambda terms-Definability">Definability</a></h3></div>
+<p>
+a function <code>f : N —&gt; N</code> is definable in lambda calculus by term F if
+<code>F[n] =β [ f (n) ]</code> for every n in N
+</p>
+
+<p>
+for Church numerals only:
+<code>F cn =β cf (n)</code>
+</p>
+
+<p>
+You can define successor as:
+<code>S = λx.λsz.s(xsz)</code> OR <code>S' = λx.λsz.xs(sz)</code>
+</p>
+
+    </div>
+</body>
+</html>

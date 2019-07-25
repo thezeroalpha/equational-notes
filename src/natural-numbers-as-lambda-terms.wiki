@@ -1,0 +1,21 @@
+%template math
+== Natural numbers as lambda terms ==
+=== Church numerals: ===
+{{{
+c0 = λs.λz.z
+c1 = λs.λz.s(z)
+c2 = λs.λz.s(s((z)))
+...
+cn = λs.λz.sn(z)
+}}}
+
+=== Definability ===
+a function `f : N —> N` is definable in lambda calculus by term F if
+`F[n] =β [ f (n) ]` for every n in N
+
+for Church numerals only:
+`F cn =β cf (n)`
+
+You can define successor as:
+`S = λx.λsz.s(xsz)` OR `S' = λx.λsz.xs(sz)`
+
