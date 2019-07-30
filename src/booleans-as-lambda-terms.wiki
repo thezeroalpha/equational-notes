@@ -40,3 +40,66 @@ Verifying:
 
 not true == false, so definition is OK
 
+=== Conjunction (AND) ===
+Start with a truth table (specification):
+
+{{{
+and true true =β true
+and true false =β false
+and false true =β false
+and false false =β false
+}}}
+
+We see that there are two arguments x and y.
+The value is given by the logical statement "if x then y otherwise false".
+So if the first argument is true, then the value depends on the truth value of the second argument. If the first argument is false, the whole thing is automatically false.
+
+In lambda calculus:
+
+{{{
+and := λxy.x y false
+}}}
+
+Checking for correctness:
+
+{{{
+and false true  =   (λxy.x y false) (false) (true)
+                ⇒β  (false) (true) (false)
+                =   (λxy.y) (true) (false)
+                ⇒β  false
+        false   =β  and false true
+}}}
+
+This makes sense, so the definition is correct.
+
+=== Disjunction (OR) ===
+Start with a truth table (specification):
+
+{{{
+or true true =β true
+or true false =β true
+or false true =β true
+or false false =β false
+}}}
+
+We see that there are two arguments x and y.
+The value is given by the logical statement "if x then true otherwise y".
+So if the first argument is true, the whole thing is automatically true. If the first argument is false, the value depends on the truth value of the second argument.
+
+In lambda calculus:
+
+{{{
+or := λxy.x true y
+}}}
+
+Checking for correctness:
+
+{{{
+or false true   =   (λxy.x true y) (false) (true)
+                ⇒β  (false) (true) (true)
+                =   (λxy.y) (true) (true)
+                ⇒β  true
+        true    =β  or false true
+}}}
+
+This makes sense, so the definition is correct.

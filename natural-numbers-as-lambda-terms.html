@@ -33,13 +33,46 @@ nav #name {
     <div class="content">
     
 <div id="Natural numbers as lambda terms"><h2 id="Natural numbers as lambda terms" class="header"><a href="#Natural numbers as lambda terms">Natural numbers as lambda terms</a></h2></div>
-<div id="Natural numbers as lambda terms-Church numerals:"><h3 id="Church numerals:" class="header"><a href="#Natural numbers as lambda terms-Church numerals:">Church numerals:</a></h3></div>
+<div id="Natural numbers as lambda terms-Church numerals"><h3 id="Church numerals" class="header"><a href="#Natural numbers as lambda terms-Church numerals">Church numerals</a></h3></div>
+<p>
+Try to find infinitely many different closed normal forms that let us calculate.
+</p>
+
+<pre>
+zero                            =&gt; z
+successor(zero)                 =&gt; s z
+successor(successor(zero))      =&gt; s (s z)
+</pre>
+
+<p>
+∴ infinite, many, different, normal.
+</p>
+
 <pre>
 c0 = λs.λz.z
 c1 = λs.λz.s(z)
 c2 = λs.λz.s(s((z)))
 ...
-cn = λs.λz.sn(z)
+cn = λs.λz.sⁿ(z)
+</pre>
+
+<p>
+∴ closed.
+</p>
+
+<p>
+how to find definition of successor?
+</p>
+
+<pre>
+s cn =β cn + 1
+    (in english, successor of Church numeral n is the same as the Church numeral + 1)
+
+c₁ = λsz.sz
+c₂ = λsz.s (s z)
+
+∴ s = λx.λsz.x s (s z)
+    = λx.λsz.s (x s z)
 </pre>
 
 <div id="Natural numbers as lambda terms-Definability"><h3 id="Definability" class="header"><a href="#Natural numbers as lambda terms-Definability">Definability</a></h3></div>

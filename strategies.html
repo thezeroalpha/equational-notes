@@ -61,8 +61,7 @@ Leftmost: the one most on the left obviously
 
 </ul>
 
-<div id="Strategies-Strategies"><h3 id="Strategies" class="header"><a href="#Strategies-Strategies">Strategies</a></h3></div>
-<div id="Strategies-Strategies-Call by need"><h4 id="Call by need" class="header"><a href="#Strategies-Strategies-Call by need">Call by need</a></h4></div>
+<div id="Strategies-Call by need"><h3 id="Call by need" class="header"><a href="#Strategies-Call by need">Call by need</a></h3></div>
 <p>
 reduce in every step the leftmost outermost redex. if it finds a loop, no normal form.
 </p>
@@ -99,7 +98,7 @@ difficult to implement
 
 </ul>
 
-<div id="Strategies-Strategies-Call by value"><h4 id="Call by value" class="header"><a href="#Strategies-Strategies-Call by value">Call by value</a></h4></div>
+<div id="Strategies-Call by value"><h3 id="Call by value" class="header"><a href="#Strategies-Call by value">Call by value</a></h3></div>
 <p>
 Reduce in every step the leftmost innermost redex.
 </p>
@@ -135,6 +134,44 @@ not normalising
 reduction to normal form may reduce redexes that don’t contribute to normal form
 
 </ul>
+
+<div id="Strategies-Call by value-Rightmost-outermost: not normalizing!"><h4 id="Rightmost-outermost: not normalizing!" class="header"><a href="#Strategies-Call by value-Rightmost-outermost: not normalizing!">Rightmost-outermost: not normalizing!</a></h4></div>
+<p>
+Rightmost outermost is not normalising.
+For example, take the term <code>((λx.x)(λx.y))(Ω)</code>.
+</p>
+
+<p>
+Leftmost outermost:
+</p>
+
+<pre>
+((λx.x)(λx.y))(Ω)   =&gt; (λx.y)(Ω)    [reduces the λx.x]
+                    =&gt; y
+</pre>
+
+<p>
+Rightmost outermost:
+</p>
+
+<pre>
+((λx.x)(λx.y))(Ω)   =&gt; ((λx.x)(λx.y))(Ω)
+                    =  ((λx.x)(λx.y))((λx.xx)(λx.xx))   [reduces the application in Ω]
+                    =&gt; ((λx.x)(λx.y))(Ω)
+                    =&gt; ((λx.x)(λx.y))(Ω)
+                    =&gt; etc.
+</pre>
+
+<p>
+It's easier to see this if you draw the tree.
+An application with an application on the left side can't be a redex.
+The leftmost outermost redex is the λx.x, whereas the rightmost outermost strategy reduces the application inside the Ω.
+</p>
+
+<p>
+Leftmost outermost gives a result, while rightmost outermost goes into a loop.
+Therefore, rightmost outermost is not a normalizing strategy.
+</p>
 
     </div>
 </body>

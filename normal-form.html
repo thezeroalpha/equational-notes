@@ -34,12 +34,15 @@ nav #name {
     
 <div id="Normal form"><h2 id="Normal form" class="header"><a href="#Normal form">Normal form</a></h2></div>
 <p>
-λ-term is in beta-normal (B-normal) form if it does not contain a beta-redex.
-If it has a normal form, it can be reduced.
+λ-term is in beta-normal (B-normal) form if it does not contain a beta-redex (you can't reduce it any more).
 </p>
 
 <p>
-If it is <em>in</em> normal form, it also <em>has</em> a normal form.
+If it is <em>in</em> normal form, it automatically also <em>has</em> a normal form.
+</p>
+
+<p>
+If it <em>has</em> a normal form, it is not necessarily <em>in</em> normal form.
 </p>
 
 <p>
@@ -57,9 +60,47 @@ M = x M1 ... Mn with n ≥ 0 and M1...Mn normal forms
 <p>
 <span id="Normal form-Strongly normalising (terminating):"></span><strong id="Strongly normalising (terminating):">Strongly normalising (terminating):</strong> if all B-reduction sequences starting in M are finite (therefore also weakly normalising)
 </p>
+<ul>
+<li>
+terminating: x, λx.x, ...
+
+<li>
+non-terminating: Ω, (λx.xxx) (λx.xxx), ...
+
+</ul>
 
 <p>
-<span id="Normal form-Weakly normalising:"></span><strong id="Weakly normalising:">Weakly normalising:</strong> if there exists a B-reduction sequence starting in M that ends in a normal form
+<span id="Normal form-Weakly normalising:"></span><strong id="Weakly normalising:">Weakly normalising:</strong> if there exists a B-reduction sequence starting in M that ends in a normal form.
+</p>
+<ul>
+<li>
+so it can reach a result, but also has a reduction loop.
+
+<li>
+e.g. K, Ω
+
+</ul>
+
+<div id="Confluence"><h2 id="Confluence" class="header"><a href="#Confluence">Confluence</a></h2></div>
+<p>
+Confluence is when terms can be rewritten in more than one way, still giving the same final result.
+That is, reducing to the same normal form.
+</p>
+
+<p>
+In logic:
+</p>
+
+<pre>
+∀M1, M2: M ⇒ M1
+         M ⇒ M2
+
+         M1 ⇒β B
+         M2 ⇒β B
+</pre>
+
+<p>
+With M being some term and B being a normal form.
 </p>
 
     </div>

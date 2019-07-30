@@ -18,3 +18,15 @@ Anonymous function (λx.x):
 \x -> x
 }}}
 
+Infinite lists:
+
+{{{class="code haskell"
+ones = 1:ones   -- define an infinite list
+head ones       -- => 1
+}}}
+
+Lazy evaluation does leftmost outermost.
+
+If it wasn't lazy, innermost would fuck shit up:
+
+`head (1:ones) → head (1:1:ones) → head (1:1:1:ones) → ... → crap`

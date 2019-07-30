@@ -9,3 +9,5 @@ You probably need to memorize these.
 
 All are closed (no free variables). All are abstractions.
 
+S, K, and I are terms in the SKI combinator calculus (combinatory logic, 'CL').
+CL is undecidable, because you can't derive E ⊢ s = t.

@@ -8,7 +8,7 @@
 * F M is application of function F to argument M
 
 === terms as trees ===
-{{local:..//img/term-tree-1.png|Term tree part 1}} {{local:../img/term-tree-2.png|Term tree part 2}}
+{{local:../img/term-tree-1.png|Term tree part 1}} {{local:../img/term-tree-2.png|Term tree part 2}}
 
 `@` is an application. `λx - x` is equivalent to writing `λx.x`.
 

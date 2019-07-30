@@ -57,6 +57,27 @@ Anonymous function (λx.x):
 \x -&gt; x
 </pre>
 
+<p>
+Infinite lists:
+</p>
+
+<pre class="code haskell">
+ones = 1:ones   -- define an infinite list
+head ones       -- =&gt; 1
+</pre>
+
+<p>
+Lazy evaluation does leftmost outermost.
+</p>
+
+<p>
+If it wasn't lazy, innermost would fuck shit up:
+</p>
+
+<p>
+<code>head (1:ones) → head (1:1:ones) → head (1:1:1:ones) → ... → crap</code>
+</p>
+
     </div>
 </body>
 </html>
